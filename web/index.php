@@ -11,4 +11,4 @@ $file_name = substr($file_name, 0, strcspn($file_name, '.'));
 $tmp_path = $_FILES['audio_file']['tmp_name'];
 
 echo $tmp_path."\n";
-exec("sox {$tmp_path} /tmp/{$file_name}.mp3");
+exec("sox {$tmp_path}.wav /tmp/{$file_name}.mp3");
