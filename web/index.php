@@ -11,15 +11,3 @@ $out_path = "/tmp/{$file_name}.mp3";
 
 $cmd = "sox {$tmp_path} {$out_path}";
 exec($cmd);
-
-$content_length = filesize($out_path);
-$read_data = file_get_contents($out_path);
-
-/* Output HTTP Header */
-header('Content-Disposition: inline; filename="'.basename($out_path).'"');
-header('Content-Length: '.$content_length);
-header('Content-Type: application/octet-stream');
-
-/* Output File Data */
-readfile($out_path);
-unlink($out_path);
