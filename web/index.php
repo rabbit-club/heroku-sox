@@ -21,5 +21,5 @@ header('Content-Length: '.$content_length);
 header('Content-Type: application/octet-stream');
 
 /* Output File Data */
-echo $read_data;
+readfile($out_path);
 unlink($out_path);
