@@ -1,12 +1,11 @@
 <?php
 
 require('../vendor/autoload.php');
-$path = 'vendor/sox/bin';
+$path = '/app/vendor/sox/bin';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 echo get_include_path()."\n";
-$env = 'vendor/sox/lib';
-$prev_env = getenv('LD_LIBRARY_PATH');
-putenv("LD_LIBRARY_PATH={$prev_env}:{$env}");
+$env = '/app/vendor/sox/lib';
+putenv("LD_LIBRARY_PATH={$env}");
 echo getenv('LD_LIBRARY_PATH')."\n";
 
 $file_name = $_FILE['audio_file']['name'];
