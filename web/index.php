@@ -10,4 +10,6 @@ $tmp_path = $_FILES['audio_file']['tmp_name'];
 
 echo $file_name."\n";
 echo $tmp_path."\n";
-exec("sox {$tmp_path}.wav /tmp/{$file_name}.mp3");
+$cmd = "sox {$tmp_path}.wav /tmp/{$file_name}.mp3";
+echo $cmd."\n";
+exec($cmd);
