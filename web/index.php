@@ -9,7 +9,7 @@ $file_name = substr($file_name, 0, strcspn($file_name, '.'));
 $tmp_path = $_FILES['audio_file']['tmp_name'];
 $out_path = "/tmp/{$file_name}.mp3";
 
-$cmd = "sox {$tmp_path}.wav {$out_path}";
+$cmd = "sox {$tmp_path} {$out_path}";
 exec($cmd);
 
 $content_length = filesize($out_path);
